@@ -1,0 +1,17 @@
+services:
+  vrising:
+    container_name: v-rising
+    image: v-rising-wine
+    volumes:
+      - type: bind
+        source: ./saves
+        target: /saves
+    environment:
+      - VRISING_NAME      = V_Rising_Server_Name
+      - VRISING_PASS      = qwerty
+      - VRISING_SAVE      = VRISING_Save
+      - VRISING_PUBLIC    = false
+      - VRISING_SETTINGS  =
+    ports:
+      - 9876:9876/udp
+      - 9877:9877/udp
